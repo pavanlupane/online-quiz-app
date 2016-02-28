@@ -84,10 +84,11 @@
                 width: 90%;
                 border-radius: 20px;
                 background-color:rgba(0,0,0,0.2);
+                border: 2px solid grey;
             }
             #para5{
                 position: relative;
-                top: 50px;
+                top: 60px;
                 left: 25%;
             }
             #sbmtBtn{
@@ -97,7 +98,7 @@
             }
             #links{
                 position: relative;
-                top: 55px;
+                top: 80px;
                 height: 50px;
                 width: 100%;
                 padding-top: 10px;
@@ -106,7 +107,7 @@
             }
             #para7{
                 position: relative;
-                top: 45px;
+                top: 70px;
                 font-size: 12px;
                 color: #666666;
             }
@@ -115,6 +116,15 @@
                 color: white;
             }
         </style>
+        <script>
+           $( document ).ready(function() {
+                console.log( "ready!" );
+               $("#sbmtBtn").click(function() {
+                   console.log("Test begined!");
+                   window.open('examPage.html','_self');
+               });
+            });
+        </script>
     </head>
     <body>
         <div class="row">
@@ -125,8 +135,8 @@
                 </div>
                 <hr>
                 <div id="welcomeMsgDiv">
-                    <p id="para1">Welcome to the our test series</p>
-                    <p id="para2">Get ready to improve your scores on test</p>
+                    <p id="para1">Welcome to our test series</p>
+                    <p id="para2">Get ready to improve your scores on tests</p>
                     <div id="instructionDiv">
                         <p id="para3">*Please read the instrusctions carefully before you start</p>
                         <p id="para4">
@@ -150,6 +160,7 @@
                                         <li>You can mark your answer and revisit the question again using review button.</li>
                                         <li>You can quit/submit your exam anytime using submit button.</li>
                                         <li>Your score report will be available right after the exam.</li>
+                                        <li>Click on 'Support' link for any technical assistance.</li>
                                         <li>Please try not to cheat yourself! :)</li>
                                       </ul>
                                     </p>
