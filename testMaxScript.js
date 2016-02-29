@@ -88,4 +88,44 @@ $(document).ready(function(){
         }
        
     });
+    
+    function showResults(){     //calculate and show results
+        
+    }
+    
+    var d = new Date();
+    var currentEndDate = (d.getMonth()+1)+"/"+d.getDate()+'/'+d.getFullYear()+" "+(d.getHours()+1)+':'+d.getMinutes()+':'+d.getSeconds();
+    //console.log(currentDate);
+    var endtime =currentEndDate;
+    
+    initializeClock(endtime); //initialize clock
+    
+    function getTimeRemaining(endtime){
+      var t = Date.parse(endtime) - Date.parse(new Date());
+      var seconds = Math.floor( (t/1000) % 60 );
+      var minutes = Math.floor( (t/1000/60) % 60 );
+      var hours = Math.floor( (t/(1000*60*60)) % 24 );
+      var days = Math.floor( t/(1000*60*60*24) );
+      return {
+        'total': t,
+        'days': days,
+        'hours': hours,
+        'minutes': minutes,
+        'seconds': seconds
+      };
+    }
+    
+  function initializeClock(endtime){
+      var timeinterval = setInterval(function(){
+        var t = getTimeRemaining(endtime);
+        $("#ticker").html(t.hours + ' : ' + t.minutes + ' : ' + t.seconds);
+        if(t.total<=0){
+            alert("Time finished.<br>Redirecting to results section.");
+            setTimeout(showResults(), 5000); //redirect after 5 seconds
+        }
+      },1000);
+}
+    $("#clockBtn").click(function(){    //toggle clock code
+        $("#ticker").toggle();
+    });
 });

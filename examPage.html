@@ -63,14 +63,15 @@
             }
             #testTitleDiv{
                 height: 30px;
+                margin: 0px;
                 border-bottom: 2px solid #3399ff;
             }
             #qsReviewDiv{
-                height: 600px;
+                height: 610px;
                 background-color:rgba(0,0,0,0.2);
             }
             #reviewTableDiv{
-                margin-left: 6%;
+                margin-left: 8%;
                 margin-top: 50px;
                 height: 450px;
                 width: 250px;
@@ -82,9 +83,12 @@
                 border: 1px solid black;
                 padding: 2px 2px 2px 2px;
             }
+            #reviewTable th{
+                background-color:rgba(0,0,0,0.3);
+            }
             #questionDiv{
-                height: 600px;
-                //background-color:rgba(0,0,0,0.4);
+                height: 610px;
+                background-color:rgba(0,0,0,0.2);
             }
             #questionBody{
                 height: 250px;
@@ -149,12 +153,42 @@
                 height: 50px;
                 padding: 0px;
                 text-align: center;
-                //background-color:rgba(0,0,0,0.3);
             }
             #submitTestBtn{
                 height: 50px;
                 width: 200px;
                 font-size: 20px;
+            }
+            #footer{
+                height: 30px;
+                margin-top: 20px;
+                padding-top: 15px;
+                padding-left: 5px;
+                font-size: 12px;
+            }
+            #testTimer{
+                height: 30px;
+                padding: 0px;
+            }
+            #clockBtn{
+                height: 20px;
+                width: 90px;
+                padding: 0px;
+                font-size: 11px;
+            }
+            #ticker{
+                padding-top: 3px;
+                font-weight: bold;
+                text-align: center;
+                border: 3px solid grey;
+                color: dimgrey;
+                border-radius: 10px;
+            }
+            #testName{
+                padding-top: 5px;
+                text-align:center;
+                font-weight: bolder;
+                color: dimgrey;
             }
         </style>
     </head>
@@ -187,11 +221,12 @@
                 </div>
             </div>
             <div id="testTitleDiv" class="col-lg-12 col-md-12 col-sm-12">
-                <div id="testName" class="col-lg-9 col-md-9 col-sm-9" style="text-align:center;">
-                    <span>Test Name</span>
+                <div id="testName" class="col-lg-9 col-md-9 col-sm-9">
+                    <span>LSAT Prep Exam</span>
                 </div>
-                <div id="testName" class="col-lg-3 col-md-3 col-sm-3" style="text-align:center;">
-                    <span>Timer<span>
+                <div id="testTimer" class="col-lg-3 col-md-3 col-sm-3">
+                    <div class="col-lg-6 col-md-6 col-sm-6"><p id="ticker">Timer</p></div>
+                    <div class="col-lg-6 col-md-6 col-sm-6" style="padding-top:3px;"><button id="clockBtn" type="button" class="btn btn-default">Toggle Clock</button></div>
                 </div>
             </div>
             <div id="testBody" class="col-lg-12 col-md-12 col-sm-12">
@@ -206,6 +241,9 @@
                     </div>
                     <div id="submitTestDiv">
                         <button id="submitTestBtn" type="button" class="btn btn-success">Submit Test</button>
+                    </div>
+                    <div id="footer">
+                        <span><span class="glyphicon glyphicon-copyright-mark"></span>&nbsp;Copyright Pavan Lupane</span><span style="float:right;">Designed for TestMax</span>
                     </div>
                 </div>
                 <div id="questionDiv" class="col-lg-9 col-md-9 col-sm-9">
