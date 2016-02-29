@@ -59,6 +59,7 @@
             }
             #testBody{
                 height: 620px;
+                padding: 0;
             }
             #testTitleDiv{
                 height: 30px;
@@ -83,12 +84,77 @@
             }
             #questionDiv{
                 height: 600px;
-                background-color:rgba(0,0,0,0.4);
+                //background-color:rgba(0,0,0,0.4);
             }
             #questionBody{
-                height: 500px;
-                margin-top: 50px;
-                background-color:rgba(0,0,0,0.6);
+                height: 250px;
+                margin-top: 30px;
+                padding: 0px;
+                background-color:rgba(0,0,0,0.2);
+            }
+            #answersBody{
+                height: 300px;
+                margin-top: 20px;
+                padding: 0px;
+                background-color:rgba(0,0,0,0.2);
+            }
+            #qOffset{
+                height: 250px;
+                padding: 0px;
+                padding-left: 5px;
+                border-right: 4px solid green;
+                font-size: 45px;
+                font-family: "Palatino",serif;
+                text-align: justify;
+                background-color:rgba(0,0,0,0.3);
+            }
+            #qData{
+                height: 230px;
+                padding: 0px;
+                padding-left: 2%;
+                padding-right: 5px;
+                padding-top: 10px;
+                overflow-y: auto;
+                //background-color:rgba(0,0,0,0.4);
+            }
+            #ansHeader{
+                width: 100%;
+                padding: 10px 10px 10px 10px;
+                border-bottom: 2px solid green;
+                font-weight: bold;
+                background-color:rgba(0,0,0,0.3);
+            }
+            #ansOps{
+                height: 190px;
+                padding-left: 30px;
+                padding-top: 30px;
+                overflow-y: auto;
+            }
+            #ansOpsForm input{
+                
+            }
+            #saveAnsDiv{
+                height: 50px;
+                padding-top: 8px;
+                padding-right: 40px;
+                background-color:rgba(0,0,0,0.3);
+                border-bottom: 2px solid green;
+            }
+            #saveAnsBtn{
+                width: 150px;
+                float: right;
+                visibility: hidden;
+            }
+            #submitTestDiv{
+                height: 50px;
+                padding: 0px;
+                text-align: center;
+                //background-color:rgba(0,0,0,0.3);
+            }
+            #submitTestBtn{
+                height: 50px;
+                width: 200px;
+                font-size: 20px;
             }
         </style>
     </head>
@@ -138,10 +204,33 @@
                             </tr>
                         </table>
                     </div>
+                    <div id="submitTestDiv">
+                        <button id="submitTestBtn" type="button" class="btn btn-success">Submit Test</button>
+                    </div>
                 </div>
                 <div id="questionDiv" class="col-lg-9 col-md-9 col-sm-9">
-                    <div id="questionBody" class="col-lg-10 col-lg-offset-1">
-                        
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div id="questionBody" class="col-lg-12 col-md-12 col-sm-12">
+                            <div id="qOffset" class="col-lg-1 col-md-1 col-sm-1">
+                                <span>Q</span>
+                            </div>
+                            <div id="qData" class="col-lg-11 col-md-11 col-sm-11">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div id="answersBody" class="col-lg-12 col-md-12 col-sm-12">
+                            <div id="ansHeader"><span>Answer Options:</span></div>
+                            <div id="ansOps" class="col-lg-12 col-md-12 col-sm-12">
+                                <form id="ansOpsForm">
+                                    
+                                </form>
+                            </div>
+                            <div id="saveAnsDiv" class="col-lg-12 col-md-12 col-sm-12">
+                                <span id="prevAns"></span>
+                                <button id="saveAnsBtn" type="button" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span>&nbsp;&nbsp;&nbsp;Save Answer</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
