@@ -20,12 +20,7 @@ $(document).ready(function(){
             for(i=0;i<questionCnt;i++){
                 answersKey[i] = questionnireJSON.rows[0].value.qsbank[i].answer;
             }
-             console.log(answersKey);
-             
-//            console.log("Answers::");
-//            for (key in answersKey){
-//                console.log(answersKey[key]);
-//            }
+             //console.log(answersKey);
         }    
     });
     
@@ -45,7 +40,7 @@ $(document).ready(function(){
         var questionString = null;
         var ansOptionsString = null;
         var saveAnsBtnString = null;
-        console.log(qsIndex);
+        //console.log(qsIndex);
         currentQuestion = qsIndex;
         
         if(answersSelected[qsIndex-1] == 0 || typeof answersSelected[qsIndex-1] == 'undefined'){
@@ -79,14 +74,14 @@ $(document).ready(function(){
     
     $("#saveAnsBtn").click(function(){
         //$("input:radio[name='ans']:checked").val();
-        console.log("Current question is :: "+currentQuestion);
+        //console.log("Current question is :: "+currentQuestion);
         var selectedAns = $("input:radio[name='ans']:checked").val();
-        console.log("Selected ::"+selectedAns);
+        //console.log("Selected ::"+selectedAns);
         if (typeof selectedAns != 'undefined'){
             answersSelected[currentQuestion-1]=selectedAns;     //saved selected answer in array
             $("#status" + currentQuestion).html('<span>Answered<span>').css("color","green"); //updated status with visited
 
-            console.log(answersSelected); 
+            //console.log(answersSelected); 
             $('#prevAns').html('<span style="font-weight:bold; color:white;">Previous selected answer :: '+selectedAns+'</span>');
         }
        
@@ -112,7 +107,7 @@ $(document).ready(function(){
                 correctAns++;
             }
         }
-        console.log("Correct Ans::"+correctAns);
+        //console.log("Correct Ans::"+correctAns);
         
         resultString = "<span>Total Number of Questions : "+questionCnt+"</span><br>";
         resultString +="<span>Total Questions attempted : "+attempted+"</span><br>";
@@ -123,8 +118,12 @@ $(document).ready(function(){
     }
     
     var d = new Date();
-    var currentEndDate = (d.getMonth()+1)+"/"+d.getDate()+'/'+d.getFullYear()+" "+(d.getHours()+1)+':'+d.getMinutes()+':'+d.getSeconds();
-    console.log(currentEndDate);
+    if(d.getHours() == 23){
+        var currentEndDate = (d.getMonth()+1)+"/"+(d.getDate()+1)+'/'+d.getFullYear()+" "+'0'+':'+d.getMinutes()+':'+d.getSeconds();
+    }  
+    else
+        var currentEndDate = (d.getMonth()+1)+"/"+d.getDate()+'/'+d.getFullYear()+" "+(d.getHours()+1)+':'+d.getMinutes()+':'+d.getSeconds();
+    //console.log(currentEndDate);
     var endtime =currentEndDate;
     
     initializeClock(endtime); //initialize clock
