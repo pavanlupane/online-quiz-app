@@ -3,7 +3,8 @@ var totalQs = 0;
 var questionCnt=15;
 var currentQuestion;
 var answersKey = [];
-var answersSelected = [];
+var answersSelected = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+var timeinterval;
 
 $(document).ready(function(){
     /*Jquery code for CouchDB connection and data fetch*/ 
@@ -19,6 +20,8 @@ $(document).ready(function(){
             for(i=0;i<questionCnt;i++){
                 answersKey[i] = questionnireJSON.rows[0].value.qsbank[i].answer;
             }
+             console.log(answersKey);
+             
 //            console.log("Answers::");
 //            for (key in answersKey){
 //                console.log(answersKey[key]);
@@ -49,7 +52,7 @@ $(document).ready(function(){
             $("#status" + qsIndex).html('<span>Visited<span>').css("color","#800000"); //updated status with visited
         }
         
-        if(typeof answersSelected[qsIndex-1] == 'undefined'){
+        if(answersSelected[qsIndex-1] == 0){
             $('#prevAns').html('<span style="font-weight:bold; color:white;">Previous selected answer :: Not Answered</span>');
         }else{
             $('#prevAns').html('<span style="font-weight:bold; color:white;">Previous selected answer :: '+answersSelected[qsIndex-1]+'</span>');
@@ -89,13 +92,39 @@ $(document).ready(function(){
        
     });
     
-    function showResults(){     //calculate and show results
+    function showResults(){     //calculate and show results in modal
+        clearInterval(timeinterval);        //clear ticker interval
+        $("#myModal").modal('show');
         
+        var attempted = 0;
+        var correctAns = 0;
+        var resultString = null;
+        
+        for(key in answersSelected){
+            if(answersSelected[key] != 0){
+                attempted++;
+            }
+        }
+        //console.log("Total attempted ::"+attempted);
+        
+        for(var i =0; i<questionCnt; i++){
+            if(answersSelected[i] == answersKey[i]){
+                correctAns++;
+            }
+        }
+        console.log("Correct Ans::"+correctAns);
+        
+        resultString = "<span>Total Number of Questions : "+questionCnt+"</span><br>";
+        resultString +="<span>Total Questions attempted : "+attempted+"</span><br>";
+        resultString +="<span>Total Correct Answers : "+correctAns+"</span><br><br>";
+        resultString +="<span>Percentage Score : "+(Math.round((correctAns/questionCnt)*100))+" %</span><br>";
+        
+        $("#modalBodyResult").html(resultString);
     }
     
     var d = new Date();
     var currentEndDate = (d.getMonth()+1)+"/"+d.getDate()+'/'+d.getFullYear()+" "+(d.getHours()+1)+':'+d.getMinutes()+':'+d.getSeconds();
-    //console.log(currentDate);
+    console.log(currentEndDate);
     var endtime =currentEndDate;
     
     initializeClock(endtime); //initialize clock
@@ -116,10 +145,11 @@ $(document).ready(function(){
     }
     
   function initializeClock(endtime){
-      var timeinterval = setInterval(function(){
+        timeinterval = setInterval(function(){
         var t = getTimeRemaining(endtime);
         $("#ticker").html(t.hours + ' : ' + t.minutes + ' : ' + t.seconds);
-        if(t.total<=0){
+        if(t.total<=0){     //if time finishes
+            clearInterval(timeinterval);    //clear interval
             alert("Time finished.<br>Redirecting to results section.");
             setTimeout(showResults(), 5000); //redirect after 5 seconds
         }
@@ -127,5 +157,19 @@ $(document).ready(function(){
 }
     $("#clockBtn").click(function(){    //toggle clock code
         $("#ticker").toggle();
+    });
+    
+    $("#submitTestBtn").click(function(){       //submit test code
+        var endTestFlag = confirm("Do you want to exit test?");
+        if (endTestFlag == true) {
+            console.log("End Test.");
+            showResults();
+        } else {
+            console.log("Continue test");
+        }
+    });
+    
+    $('.backToHomeBtn').click(function(){
+         window.open('home.html','_self');
     });
 });

@@ -1,0 +1,183 @@
+body{
+                //background-color: #404040;
+            }
+            #navBar{
+                height: 80px;
+                width: 100%;
+                padding: 0px;
+                background-color:rgba(0,0,0,0.3);
+                border-bottom: 2px solid #3399ff;
+            }
+            #logoDiv{
+                height: 50px;
+                width: 140px;
+                margin-top: 10px;
+                margin-left: 70px;
+                background-color:white;
+                border-radius: 15px;
+                border: 2px solid grey;
+                
+            }
+            #tmlogo{
+                margin-top: 7px;
+                margin-left: 10px;
+                height: 30px;
+                width: 120px;
+            }
+            #userDiv{
+                height: 60px;
+                width: 150px;
+                margin-top: 10px;
+                padding: 0px;
+            }
+            #userlogo{
+                height: 60px;
+                width: 60px;
+            }
+            #dropdownMenu{
+                margin-top: 20px;
+                width: 100px;
+            }
+            #dropdownMenu li{
+                font-size: 14px;
+                padding-left: 15px;
+                height: 25px;
+                width: 100px;
+            }
+            #testBody{
+                height: 620px;
+                padding: 0;
+            }
+            #testTitleDiv{
+                height: 30px;
+                margin: 0px;
+                border-bottom: 2px solid #3399ff;
+            }
+            #qsReviewDiv{
+                height: 610px;
+                background-color:rgba(0,0,0,0.2);
+            }
+            #reviewTableDiv{
+                margin-left: 8%;
+                margin-top: 50px;
+                height: 450px;
+                width: 250px;
+                //background-color:rgba(0,0,0,0.2);
+            }
+            #reviewTable th,td{
+                width: 125px;
+                text-align: center;
+                border: 1px solid black;
+                padding: 2px 2px 2px 2px;
+            }
+            #reviewTable th{
+                background-color:rgba(0,0,0,0.3);
+            }
+            #questionDiv{
+                height: 610px;
+                background-color:rgba(0,0,0,0.2);
+            }
+            #questionBody{
+                height: 250px;
+                margin-top: 30px;
+                padding: 0px;
+                background-color:rgba(0,0,0,0.2);
+            }
+            #answersBody{
+                height: 300px;
+                margin-top: 20px;
+                padding: 0px;
+                background-color:rgba(0,0,0,0.2);
+            }
+            #qOffset{
+                height: 250px;
+                padding: 0px;
+                padding-left: 5px;
+                border-right: 4px solid green;
+                font-size: 45px;
+                font-family: "Palatino",serif;
+                text-align: justify;
+                background-color:rgba(0,0,0,0.3);
+            }
+            #qData{
+                height: 230px;
+                padding: 0px;
+                padding-left: 2%;
+                padding-right: 5px;
+                padding-top: 10px;
+                overflow-y: auto;
+                //background-color:rgba(0,0,0,0.4);
+            }
+            #ansHeader{
+                width: 100%;
+                padding: 10px 10px 10px 10px;
+                border-bottom: 2px solid green;
+                font-weight: bold;
+                background-color:rgba(0,0,0,0.3);
+            }
+            #ansOps{
+                height: 190px;
+                padding-left: 30px;
+                padding-top: 30px;
+                overflow-y: auto;
+            }
+            #ansOpsForm input{
+                
+            }
+            #saveAnsDiv{
+                height: 50px;
+                padding-top: 8px;
+                padding-right: 40px;
+                background-color:rgba(0,0,0,0.3);
+                border-bottom: 2px solid green;
+            }
+            #saveAnsBtn{
+                width: 150px;
+                float: right;
+                visibility: hidden;
+            }
+            #submitTestDiv{
+                height: 50px;
+                padding: 0px;
+                text-align: center;
+            }
+            #submitTestBtn{
+                height: 50px;
+                width: 200px;
+                font-size: 20px;
+            }
+            #footer{
+                height: 30px;
+                margin-top: 20px;
+                padding-top: 15px;
+                padding-left: 5px;
+                font-size: 12px;
+            }
+            #testTimer{
+                height: 30px;
+                padding: 0px;
+            }
+            #clockBtn{
+                height: 20px;
+                width: 90px;
+                padding: 0px;
+                font-size: 11px;
+            }
+            #ticker{
+                padding-top: 3px;
+                font-weight: bold;
+                text-align: center;
+                border: 3px solid grey;
+                color: dimgrey;
+                border-radius: 10px;
+            }
+            #testName{
+                padding-top: 5px;
+                text-align:center;
+                font-weight: bolder;
+                color: dimgrey;
+            }
+            #myModalLabel{
+                font-size: 25px;
+                color: green;
+            }

@@ -1,0 +1,105 @@
+    #welcomePhoto{
+        height: 700px;
+        background: url('http://res.cloudinary.com/pavanlupane/image/upload/v1456876637/success1_dfhcdw.jpg');
+        background-size:cover;
+        padding: 0px;
+        border: 5px solid grey;
+    }
+    #welcomeIntro{
+        height: 700px;
+        padding: 0px;
+    }
+    #foreground{
+        height: 700px;
+        background-color:rgba(0,0,0,0.2);
+        margin: 0px;
+    }
+    #logodiv{
+        height: 130px;
+        width: 100%;
+        //background-color:rgba(0,0,0,0.2);
+        margin-top: 50px;
+        padding: 0px;
+    }
+    #tmLogo{
+        height: 50px;
+        width 80px;
+        margin-left: 23%;
+        margin-bottom: 30px;
+
+    }
+    #titleLine{
+        position: relative;
+        margin-left: 10%;
+        font-size: 22px;
+        color: #3399ff;
+    }
+    #welcomeMsgDiv{
+        height: 400px;
+        width: 100%;
+        padding: 0px;
+        margin: 0px;
+        //background-color:rgba(0,0,0,0.2);
+    }
+    #para1{
+        padding-top: 30px;
+        margin-left: 35px;
+        font-size: 30px;
+        font-weight: 600;
+        color: #001a4d;
+    }
+    #para2{
+        margin-left: 10%;
+        font-size: 18px;
+        color: #666666;
+        margin-bottom: 20px;
+    }
+    #para3{
+        margin-left: 5%;
+        margin-top: 30px;
+        font-size: 14px;
+        color: #666666;
+    }
+    #para4{
+        margin-left: 35%;
+        margin-top: 25px;
+    }
+    #instructionDiv{
+        position: relative;
+        padding-top: 1px;
+        margin-left: 6%;
+        height: 140px;
+        width: 90%;
+        border-radius: 20px;
+        background-color:rgba(0,0,0,0.2);
+        border: 2px solid grey;
+    }
+    #para5{
+        position: relative;
+        top: 60px;
+        left: 25%;
+    }
+    #sbmtBtn{
+        height: 50px;
+        width: 180px;
+        font-size: 20px;
+    }
+    #links{
+        position: relative;
+        top: 80px;
+        height: 50px;
+        width: 100%;
+        padding-top: 10px;
+        padding-left: 12%;
+        font-size: 14px;
+    }
+    #para7{
+        position: relative;
+        top: 70px;
+        font-size: 12px;
+        color: #666666;
+    }
+    #modaldialog{
+        background-color:rgba(0,0,0,0.3);
+        color: white;
+    }
